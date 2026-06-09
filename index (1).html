@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tawheeda — Founder · Investor · Thinker</title>
+<meta name="description" content="Founder, investor-in-training, and AI-ethics thinker working at the intersection of venture, Islamic finance, and human agency over AI." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#15171c; --ink-soft:#1d2026; --bone:#f3f1ea; --bone-card:#faf8f2;
+    --brass:#a8824a; --brass-bright:#c8a266; --emerald:#1f4d3d; --emerald-deep:#16382c;
+    --slate:#5b606b;
+    --line-dark:rgba(243,241,234,0.14); --line-light:rgba(21,23,28,0.12);
+    --display:"Instrument Serif",Georgia,serif;
+    --body:"Hanken Grotesk",system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{font-family:var(--body);background:var(--bone);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit}
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);font-weight:500}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;padding:18px 28px;transition:background .4s ease,backdrop-filter .4s ease}
+  nav.scrolled{background:rgba(21,23,28,.84);backdrop-filter:blur(10px)}
+  nav .mark{font-family:var(--display);font-size:1.35rem;color:var(--bone);letter-spacing:.01em}
+  nav .mark .ar{color:var(--brass-bright);font-style:italic;margin-left:6px}
+  nav .links{display:flex;gap:24px}
+  nav .links a{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--bone);text-decoration:none;opacity:.76;transition:opacity .2s}
+  nav .links a:hover,nav .links a:focus-visible{opacity:1}
+  @media (max-width:760px){nav .links{display:none}}
+
+  /* HERO */
+  .hero{position:relative;background:var(--ink);color:var(--bone);min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero .glyph{position:absolute;right:-130px;top:50%;transform:translateY(-50%);width:660px;height:660px;opacity:.5;pointer-events:none}
+  @media (max-width:880px){.hero .glyph{right:-220px;width:480px;height:480px;opacity:.26}}
+  .hero .glyph polygon,.hero .glyph line,.hero .glyph circle{stroke:var(--brass);stroke-width:1;fill:none}
+  .hero-inner{position:relative;z-index:2;padding:120px 0 80px}
+  .hero .roles{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:26px}
+  .hero .roles span{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
+  .hero .roles span+span{border-left:1px solid var(--line-dark);padding-left:18px}
+  .hero h1{font-family:var(--display);font-weight:400;font-size:clamp(3rem,8.5vw,6rem);line-height:1;letter-spacing:-.01em;margin-bottom:26px}
+  .hero h1 .accent{font-style:italic;color:var(--brass-bright)}
+  .hero .thesis{font-size:clamp(1.05rem,2.2vw,1.38rem);max-width:600px;color:rgba(243,241,234,.84);margin-bottom:40px;line-height:1.5}
+  .hero .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:14px 22px;border:1px solid var(--brass);color:var(--ink);background:var(--brass);transition:transform .2s,background .2s}
+  .btn:hover,.btn:focus-visible{background:var(--brass-bright);transform:translateY(-2px)}
+  .btn.ghost{background:transparent;color:var(--bone);border-color:var(--line-dark)}
+  .btn.ghost:hover,.btn.ghost:focus-visible{border-color:var(--brass);background:transparent}
+
+  /* MANIFESTO */
+  .manifesto{background:var(--bone)}
+  .manifesto .wrap{padding-top:104px;padding-bottom:104px}
+  .manifesto .eyebrow{display:block;margin-bottom:26px}
+  .manifesto p{font-family:var(--display);font-size:clamp(1.7rem,4vw,2.6rem);line-height:1.28;max-width:880px;letter-spacing:-.005em}
+  .manifesto p em{font-style:italic;color:var(--emerald)}
+
+  /* PILLAR shell */
+  .pillar{padding:104px 0}
+  .pillar-head{display:flex;align-items:flex-start;gap:28px;margin-bottom:52px}
+  .pillar-head .num{font-family:var(--display);font-size:clamp(2.4rem,5vw,3.6rem);line-height:.9;color:var(--brass);font-style:italic;flex:none}
+  .pillar-head .h-text .eyebrow{display:block;margin-bottom:12px}
+  .pillar-head h2{font-family:var(--display);font-weight:400;font-size:clamp(2.1rem,5vw,3.2rem);line-height:1.02;letter-spacing:-.01em}
+  .pillar-head .lede{margin-top:16px;color:var(--slate);font-size:1.05rem;max-width:560px}
+
+  /* PILLAR I — startup (dark) */
+  .p-startup{background:var(--ink);color:var(--bone)}
+  .p-startup h2,.p-startup .pillar-head .num{color:var(--bone)}
+  .p-startup .pillar-head .num{color:var(--brass)}
+  .p-startup .lede{color:rgba(243,241,234,.6)}
+  .startup-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:start}
+  @media (max-width:820px){.startup-grid{grid-template-columns:1fr;gap:34px}}
+  .startup-grid .name{font-family:var(--display);font-size:clamp(2.6rem,6vw,4rem);line-height:1;margin-bottom:6px}
+  .startup-grid .name .ar{color:var(--brass-bright);font-style:italic;font-size:.6em;margin-left:10px}
+  .startup-grid .kicker{font-family:var(--mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--brass);margin-bottom:22px}
+  .startup-grid .body p{color:rgba(243,241,234,.78);margin-bottom:14px}
+  .startup-grid .frame{border-left:2px solid var(--brass);padding:6px 0 6px 20px;margin:24px 0;font-family:var(--display);font-size:1.4rem;line-height:1.35;color:var(--bone)}
+  .startup-grid .frame em{font-style:italic;color:var(--brass-bright)}
+  .startup-side ul{list-style:none}
+  .startup-side li{padding:14px 0;border-top:1px solid var(--line-dark);font-size:.92rem;color:rgba(243,241,234,.82)}
+  .startup-side li:last-child{border-bottom:1px solid var(--line-dark)}
+  .startup-side li b{display:block;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);margin-bottom:4px;font-weight:500}
+
+  /* PILLAR II — research (light) */
+  .p-research{background:var(--bone-card)}
+  .research-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  @media (max-width:720px){.research-grid{grid-template-columns:1fr}}
+  .memo{background:var(--bone);border:1px solid var(--line-light);padding:24px;display:flex;flex-direction:column;gap:12px;transition:border-color .2s,transform .2s}
+  .memo:hover{border-color:var(--brass);transform:translateY(-3px)}
+  .memo .top{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+  .memo .tk{font-family:var(--mono);font-size:.76rem;letter-spacing:.05em;color:var(--brass)}
+  .memo .st{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--emerald)}
+  .memo h4{font-family:var(--display);font-weight:400;font-size:1.45rem;line-height:1.1}
+  .memo p{font-size:.92rem;color:var(--slate)}
+  .memo .note{font-family:var(--mono);font-size:.64rem;letter-spacing:.03em;color:var(--brass);border-top:1px dashed var(--line-light);padding-top:11px;margin-top:auto}
+  .memo.add{border-style:dashed;align-items:center;justify-content:center;text-align:center;color:var(--slate);min-height:170px;gap:8px}
+  .memo.add .plus{font-family:var(--display);font-size:2.2rem;color:var(--brass);line-height:1}
+  .research-disc{margin-top:30px;font-family:var(--mono);font-size:.72rem;letter-spacing:.03em;color:var(--slate);background:var(--bone);border-left:2px solid var(--brass);padding:16px 20px;line-height:1.7}
+
+  /* PILLAR III — AI ethics (emerald) */
+  .p-thesis{background:var(--emerald);color:var(--bone)}
+  .p-thesis h2,.p-thesis .pillar-head .num{color:var(--bone)}
+  .p-thesis .pillar-head .num{color:var(--brass-bright)}
+  .p-thesis .eyebrow{color:var(--brass-bright)}
+  .p-thesis .lede{color:rgba(243,241,234,.72)}
+  .thesis-body{max-width:760px}
+  .thesis-body .lead{font-family:var(--display);font-size:clamp(1.6rem,3.6vw,2.3rem);line-height:1.28;margin-bottom:24px}
+  .thesis-body .lead em{font-style:italic;color:var(--brass-bright)}
+  .thesis-body p{color:rgba(243,241,234,.8);margin-bottom:16px;font-size:1.02rem}
+  .principles{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+  @media (max-width:760px){.principles{grid-template-columns:1fr}}
+  .principle{border-top:1px solid var(--brass-bright);padding-top:18px}
+  .principle .pn{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;color:var(--brass-bright)}
+  .principle h5{font-family:var(--display);font-weight:400;font-size:1.4rem;line-height:1.1;margin:8px 0}
+  .principle p{font-size:.9rem;color:rgba(243,241,234,.74)}
+
+  /* CONTACT */
+  .contact{background:var(--ink);color:var(--bone);padding:104px 0 70px}
+  .contact h2{font-family:var(--display);font-weight:400;font-size:clamp(2.4rem,7vw,4.6rem);line-height:1;margin-bottom:34px}
+  .contact h2 em{font-style:italic;color:var(--brass-bright)}
+  .contact-links{display:flex;flex-wrap:wrap;gap:14px 40px}
+  .contact-links a{font-family:var(--mono);font-size:.85rem;letter-spacing:.03em;color:var(--bone);text-decoration:none;border-bottom:1px solid var(--line-dark);padding-bottom:4px;transition:border-color .2s,color .2s}
+  .contact-links a:hover,.contact-links a:focus-visible{color:var(--brass-bright);border-color:var(--brass)}
+  .contact-links .ph{color:var(--brass)}
+  footer{background:var(--ink);color:rgba(243,241,234,.4);font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;border-top:1px solid var(--line-dark);padding:26px 0}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+  :focus-visible{outline:2px solid var(--brass-bright);outline-offset:3px}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="mark" id="navMark">Tawheeda</div>
+  <div class="links">
+    <a href="#startup">The Company</a>
+    <a href="#research">The Desk</a>
+    <a href="#thesis">The Thesis</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <svg class="glyph" viewBox="0 0 200 200" aria-hidden="true"><g id="khatam"></g></svg>
+  <div class="wrap hero-inner">
+    <div class="roles" id="heroRoles"></div>
+    <h1 id="heroTitle"></h1>
+    <p class="thesis" id="heroThesis"></p>
+    <div class="cta-row">
+      <a class="btn" href="#startup">See the work</a>
+      <a class="btn ghost" href="#thesis">Read the thesis</a>
+    </div>
+  </div>
+</header>
+
+<section class="manifesto" id="manifesto">
+  <div class="wrap reveal">
+    <span class="eyebrow">Manifesto</span>
+    <p id="manifestoText"></p>
+  </div>
+</section>
+
+<!-- PILLAR I -->
+<section class="pillar p-startup" id="startup">
+  <div class="wrap">
+    <div class="pillar-head reveal">
+      <div class="num">I</div>
+      <div class="h-text">
+        <span class="eyebrow">The Company</span>
+        <h2 id="startupHead"></h2>
+        <p class="lede" id="startupLede"></p>
+      </div>
+    </div>
+    <div class="startup-grid">
+      <div class="reveal">
+        <div class="name" id="startupName"></div>
+        <div class="kicker" id="startupKicker"></div>
+        <div class="body" id="startupBody"></div>
+        <div class="frame" id="startupFrame"></div>
+      </div>
+      <div class="startup-side reveal"><ul id="startupFacts"></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLAR II -->
+<section class="pillar p-research" id="research">
+  <div class="wrap">
+    <div class="pillar-head reveal">
+      <div class="num">II</div>
+      <div class="h-text">
+        <span class="eyebrow">The Desk</span>
+        <h2 id="researchHead"></h2>
+        <p class="lede" id="researchLede"></p>
+      </div>
+    </div>
+    <div class="research-grid" id="researchGrid"></div>
+    <p class="research-disc" id="researchDisc"></p>
+  </div>
+</section>
+
+<!-- PILLAR III -->
+<section class="pillar p-thesis" id="thesis">
+  <div class="wrap">
+    <div class="pillar-head reveal">
+      <div class="num">III</div>
+      <div class="h-text">
+        <span class="eyebrow">The Thesis</span>
+        <h2 id="thesisHead"></h2>
+        <p class="lede" id="thesisLede"></p>
+      </div>
+    </div>
+    <div class="thesis-body reveal" id="thesisBody"></div>
+    <div class="principles" id="principles"></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap reveal">
+    <span class="eyebrow">Contact</span>
+    <h2 id="contactHead"></h2>
+    <div class="contact-links" id="contactLinks"></div>
+  </div>
+</section>
+
+<footer><div class="wrap">
+  <span id="footName"></span>
+  <span>Built with intention · نية</span>
+</div></footer>
+
+<script>
+/* =============================================================
+   EDIT EVERYTHING HERE.
+   This single CONTENT object drives the whole page. Change text,
+   add/remove research items, swap links — you never touch the
+   design or markup below. <em>...</em> adds emphasis where allowed.
+   Anything in [brackets] is a placeholder for you to fill in.
+   ============================================================= */
+const CONTENT = {
+  name: "Tawheeda",            // shown in nav + footer (add your surname)
+  surname: "[Last Name]",
+  roles: ["Founder", "Investor", "Thinker"],
+  title: 'I build, I back, and I <span class="accent">think about who steers.</span>',
+  thesis: "Founder-operator and investor-in-training with native access to one of the fastest-growing, hardest-to-reach markets in finance — Muslim consumers and halal capital. The mission isn't a cost. It's the moat.",
+
+  manifesto: 'Three things I do, and they\'re the same bet: I <em>build</em> for a market most capital can\'t underwrite without someone who belongs to it, I <em>back</em> companies the way an investor who lives inside her own thesis would, and I <em>think</em> hard about how to allocate so the returns, the people, and the principles all point the same direction.',
+
+  startup: {
+    head: "Niyyah.",
+    lede: "The AI-native on-ramp to halal finance for a market that's young, global, growing fast — and almost entirely unserved.",
+    name: "Niyyah",
+    arabic: "نية",            // optional; leave "" to hide
+    kicker: "Founder · Active",
+    body: [
+      "Muslim women aged 18–28 in the diaspora are a large, digitally-native, fast-growing segment — and the existing halal-finance players only reach her after she already knows what she's doing. Niyyah is the on-ramp before that point: content first, then community, then tools, then live education, so the product grows with the user, not ahead of her.",
+      "This isn't a market I'm guessing at — it's one I belong to. That's the moat: trust and distribution into a community capital wants exposure to but can't authentically reach. When it works, the returns and the mission aren't a trade-off. They're the same line."
+    ],
+    frame: 'Wahed manages the money. Zoya screens the stocks. <em>Niyyah builds the woman who can use both.</em>',
+    facts: [
+      { k: "Stage", v: "Building toward first public milestone" },
+      { k: "Market", v: "Muslim women, 18–28, in the diaspora — underserved" },
+      { k: "Arc", v: "Content → community → tools → live education" },
+      { k: "Moat", v: "Trust + distribution into a market capital can't reach alone" },
+      { k: "Link", v: "[add niyyah.com or waitlist link]" }
+    ]
+  },
+
+  research: {
+    head: "What I see that the desk next to me can't price.",
+    lede: "Real diligence on the record, plus original theses in halal-screened markets most analysts don't cover well — where my edge actually shows up.",
+    // Add, remove, or reorder items freely. status options are just labels.
+    items: [
+      { tk: "TRACK RECORD", st: "Co-authored", title: "Base10 Partners · Alif Network",
+        body: "Ten-plus investment memos co-authored with the Base10 team — live deal evaluation, not case studies.",
+        note: "↳ Add a public-safe sector summary (no confidential deal names)" },
+      { tk: "TRACK RECORD", st: "Live", title: "LehighSiliconValley",
+        body: "Hands-on due diligence on real companies through the LehighSiliconValley program.",
+        note: "↳ Add your diligence focus or company types" },
+      { tk: "[TICKER]", st: "Halal-screened", title: "[Your first original thesis]",
+        body: "An independent long/short view on a halal-screened public company — built on AAOIFI screening and your read of the business.",
+        note: "↳ We'll write this together with verified, dated figures" },
+      { add: true, label: "Next thesis goes here — pick a company and we'll write it." }
+    ],
+    disclosure: "On figures: every number in a published thesis traces to a primary source — a 10-K, 10-Q, or the company's own filings — and is dated. Nothing here is presented as a recommendation. None of the original theses carry figures yet; they're added only once verified."
+  },
+
+  thesisSection: {
+    head: "How I think capital should be allocated.",
+    lede: "Where AI and capital meet a discipline Islamic finance has run for centuries — and why it makes me a sharper allocator.",
+    lead: 'AI is becoming the most powerful allocator of capital, attention, and opportunity we\'ve built. The most valuable question isn\'t whether it\'s capable — it\'s <em>who is steering, and on what principles.</em>',
+    body: [
+      "I come at this from a Cognitive Science / AI background, so I take the fundamentals seriously: what these systems can and can't do, and how they'll reshape nearly every industry this century. The opportunity I care about is being early to steer it — backing AI that widens what people can do and stays accountable to the systems it runs on. Getting that right isn't a constraint on returns; over a long enough horizon, it's where the durable ones come from.",
+      "Islamic finance already encodes a discipline the broader market is rediscovering the hard way: tie capital to the real economy, avoid pure speculation, screen for harm, and treat the human as a steward of what they're entrusted with. I read those not as religious constraints but as a serious framework for allocating into AI and the capital that funds it — and it's part of why I price risk differently than the desk next to me."
+    ],
+    principles: [
+      { n: "i", h: "Agency over automation", p: "AI should widen the choices a person can make, not quietly narrow them." },
+      { n: "ii", h: "Linkage over speculation", p: "Capital — and compute — tied to real value, echoing Islamic finance's rejection of gharar." },
+      { n: "iii", h: "Stewardship over extraction", p: "Technology measured by whether it sustains the systems it depends on. Khilafah, not extraction." }
+    ]
+  },
+
+  contact: {
+    head: 'Let\'s <em>talk.</em>',
+    links: [
+      { label: "Email", href: "mailto:[your-email]", ph: "[add your email]" },
+      { label: "LinkedIn", href: "#", ph: "[add your URL]" },
+      { label: "Niyyah", href: "#", ph: "[add your link]" },
+      { label: "Résumé", href: "#", ph: "[add your PDF]" }
+    ]
+  }
+};
+
+/* ===================== RENDER (no need to edit below) ===================== */
+(function render(){
+  const $ = id => document.getElementById(id);
+  const set = (id, html) => { const el = $(id); if (el) el.innerHTML = html; };
+
+  // nav + footer
+  set('navMark', `${CONTENT.name} <span class="ar">· نية</span>`);
+  set('footName', `© <span id="yr"></span> ${CONTENT.name} ${CONTENT.surname}`);
+
+  // hero
+  set('heroRoles', CONTENT.roles.map(r => `<span>${r}</span>`).join(''));
+  set('heroTitle', CONTENT.title);
+  set('heroThesis', CONTENT.thesis);
+
+  // manifesto
+  set('manifestoText', CONTENT.manifesto);
+
+  // pillar I
+  const s = CONTENT.startup;
+  set('startupHead', s.head);
+  set('startupLede', s.lede);
+  set('startupName', `${s.name}${s.arabic ? ` <span class="ar">${s.arabic}</span>` : ''}`);
+  set('startupKicker', s.kicker);
+  set('startupBody', s.body.map(p => `<p>${p}</p>`).join(''));
+  set('startupFrame', s.frame);
+  set('startupFacts', s.facts.map(f => `<li><b>${f.k}</b>${f.v}</li>`).join(''));
+
+  // pillar II
+  const r = CONTENT.research;
+  set('researchHead', r.head);
+  set('researchLede', r.lede);
+  set('researchGrid', r.items.map(it => {
+    if (it.add) return `<div class="memo add"><span class="plus">+</span><p>${it.label}</p></div>`;
+    return `<div class="memo">
+      <div class="top"><span class="tk">${it.tk}</span><span class="st">${it.st}</span></div>
+      <h4>${it.title}</h4><p>${it.body}</p>
+      ${it.note ? `<span class="note">${it.note}</span>` : ''}
+    </div>`;
+  }).join(''));
+  set('researchDisc', r.disclosure);
+
+  // pillar III
+  const t = CONTENT.thesisSection;
+  set('thesisHead', t.head);
+  set('thesisLede', t.lede);
+  set('thesisBody', `<p class="lead">${t.lead}</p>${t.body.map(p => `<p>${p}</p>`).join('')}`);
+  set('principles', t.principles.map(p => `<div class="principle"><span class="pn">${p.n}</span><h5>${p.h}</h5><p>${p.p}</p></div>`).join(''));
+
+  // contact
+  set('contactHead', CONTENT.contact.head);
+  set('contactLinks', CONTENT.contact.links.map(l =>
+    `<a href="${l.href}">${l.label} — <span class="ph">${l.ph}</span></a>`).join(''));
+
+  const yr = document.getElementById('yr'); if (yr) yr.textContent = new Date().getFullYear();
+})();
+
+/* nav scroll state */
+(function(){
+  const nav = document.getElementById('nav');
+  const on = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+  on(); window.addEventListener('scroll', on, { passive:true });
+})();
+
+/* khatam motif */
+(function(){
+  const g = document.getElementById('khatam'); if(!g) return;
+  const ns='http://www.w3.org/2000/svg', cx=100, cy=100;
+  [88,66,44,22].forEach((rad,ri)=>{
+    for(let rot=0;rot<2;rot++){
+      const pts=[];
+      for(let i=0;i<4;i++){const a=(Math.PI/2)*i+(rot?Math.PI/4:0);pts.push((cx+rad*Math.cos(a)).toFixed(2)+','+(cy+rad*Math.sin(a)).toFixed(2));}
+      const poly=document.createElementNS(ns,'polygon');
+      poly.setAttribute('points',pts.join(' '));
+      poly.style.opacity=(1-ri*0.16).toFixed(2);
+      g.appendChild(poly);
+    }
+  });
+  for(let i=0;i<8;i++){const a=(Math.PI/4)*i;const ln=document.createElementNS(ns,'line');
+    ln.setAttribute('x1',cx);ln.setAttribute('y1',cy);
+    ln.setAttribute('x2',(cx+92*Math.cos(a)).toFixed(2));ln.setAttribute('y2',(cy+92*Math.sin(a)).toFixed(2));
+    ln.style.opacity='0.32';g.appendChild(ln);}
+  const c=document.createElementNS(ns,'circle');c.setAttribute('cx',cx);c.setAttribute('cy',cy);c.setAttribute('r',96);g.appendChild(c);
+
+  if(!window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+    g.querySelectorAll('polygon,line,circle').forEach((el,i)=>{
+      try{const len=el.getTotalLength?el.getTotalLength():400;
+        el.style.strokeDasharray=len;el.style.strokeDashoffset=len;
+        el.animate([{strokeDashoffset:len},{strokeDashoffset:0}],{duration:1600,delay:110*i,easing:'ease-out',fill:'forwards'});
+      }catch(e){}
+    });
+  }
+})();
+
+/* scroll reveal */
+(function(){
+  const reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  const els=document.querySelectorAll('.reveal');
+  if(reduce||!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('in'));return;}
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:0.14});
+  els.forEach(e=>io.observe(e));
+})();
+</script>
+</body>
+</html>
