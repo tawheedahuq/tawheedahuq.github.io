@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tawheeda Huq — توحيدة</title>
+<meta name="description" content="Filmmaker's eye, investor's hand. A creative director at heart building and backing in fintech, rooted in the Bengal delta." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --night:#0d2620; --night-2:#102e26; --panel:#15362c;
+    --cream:#f3e8d2; --cream-dim:rgba(243,232,210,.6); --cream-dimmer:rgba(243,232,210,.38);
+    --gold:#e3a23a; --gold-2:#f0b85a; --saffron:#dd5a2c; --teal:#5fb3a1;
+    --line:rgba(243,232,210,.15); --line-2:rgba(243,232,210,.08);
+    --disp:"Fraunces",Georgia,serif;
+    --sans:"Hanken Grotesk",system-ui,sans-serif;
+    --mono:"Space Mono",ui-monospace,monospace;
+    --maxw:1000px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{font-family:var(--sans);background:var(--night);color:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit}
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 30px}
+  .mono{font-family:var(--mono);font-size:.7rem;letter-spacing:.13em;text-transform:uppercase}
+
+  .grain{position:fixed;inset:0;pointer-events:none;z-index:9000;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+  /* MASTHEAD */
+  .mast{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:flex-start;padding:22px 30px;transition:background .4s,backdrop-filter .4s,padding .4s}
+  .mast.scrolled{background:rgba(13,38,32,.86);backdrop-filter:blur(9px);padding:14px 30px}
+  .mast .id .nm{font-family:var(--disp);font-weight:500;font-size:1.5rem;line-height:.95;letter-spacing:-.01em}
+  .mast .id .ar{font-family:var(--disp);font-size:1.05rem;color:var(--gold);margin-top:2px}
+  .mast .ix{display:flex;flex-direction:column;gap:5px;text-align:right;padding-top:5px}
+  .mast .ix a{font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--cream-dim);text-decoration:none;transition:color .2s}
+  .mast .ix a:hover,.mast .ix a:focus-visible{color:var(--gold)}
+  .mast .ix a b{color:var(--gold);font-weight:400;margin-right:7px}
+  @media (max-width:640px){.mast .ix{display:none}}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero #net{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+  .hero .veil{position:absolute;inset:0;z-index:1;background:radial-gradient(120% 90% at 75% 40%,transparent 0%,rgba(13,38,32,.55) 70%,var(--night) 100%);pointer-events:none}
+  .hero .inner{position:relative;z-index:2;padding:150px 0 90px}
+  .hero .eyebrow{display:block;color:var(--teal);margin-bottom:30px}
+  .hero h1{font-family:var(--disp);font-weight:500;font-size:clamp(2.6rem,7vw,5rem);line-height:1.02;letter-spacing:-.02em;max-width:16ch;margin-bottom:26px}
+  .hero h1 em{font-style:italic;color:var(--gold)}
+  .hero .sub{font-size:clamp(1.05rem,2vw,1.3rem);color:var(--cream-dim);max-width:50ch;margin-bottom:30px;line-height:1.55}
+  .hero .credits{color:var(--gold);letter-spacing:.18em}
+  .hero .cue{position:absolute;bottom:34px;left:0;right:0;text-align:center;z-index:2;color:var(--cream-dimmer);font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase}
+  .hero .cue::after{content:"";display:block;width:1px;height:30px;margin:10px auto 0;background:linear-gradient(var(--gold),transparent);animation:drip 2.4s ease-in-out infinite}
+  @keyframes drip{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+
+  .anim{opacity:0;transform:translateY(20px);animation:rise 1s cubic-bezier(.2,.7,.2,1) forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.anim{opacity:1;transform:none;animation:none}.hero .cue::after{animation:none}}
+
+  /* NOW strip */
+  .now{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--night-2)}
+  .now .wrap{display:flex;gap:8px 22px;flex-wrap:wrap;align-items:baseline;padding:16px 30px}
+  .now b{font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--saffron)}
+  .now span{font-size:.9rem;color:var(--cream-dim)}
+  .now span em{font-style:normal;color:var(--cream)}
+
+  /* SECTIONS */
+  section.reel{padding:84px 0}
+  .reel-head{display:flex;align-items:baseline;gap:16px;margin-bottom:34px}
+  .reel-head .rn{font-family:var(--mono);font-size:.7rem;color:var(--saffron);letter-spacing:.05em;flex:none}
+  .reel-head h2{font-family:var(--disp);font-weight:500;font-size:clamp(1.7rem,4vw,2.5rem);letter-spacing:-.015em;line-height:1}
+  .reel-head .h-note{font-family:var(--mono);font-size:.64rem;color:var(--cream-dimmer);letter-spacing:.08em;text-transform:uppercase;margin-left:auto;align-self:center}
+  .reel-intro{font-family:var(--disp);font-style:italic;font-size:1.3rem;color:var(--cream-dim);margin:-18px 0 32px;max-width:54ch;line-height:1.4}
+
+  .entry{padding:24px 0;border-top:1px solid var(--line-2);transition:padding-left .3s}
+  .entry:first-of-type{border-top:1px solid var(--line)}
+  .entry:hover{padding-left:10px}
+  .entry .er{display:flex;justify-content:space-between;align-items:baseline;gap:18px;flex-wrap:wrap}
+  .entry h3{font-family:var(--disp);font-weight:500;font-size:1.3rem;letter-spacing:-.01em}
+  .entry h3 a{text-decoration:none;border-bottom:1px solid var(--gold)}
+  .entry .meta{font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+  .entry p{color:var(--cream-dim);font-size:.98rem;max-width:64ch;margin-top:6px}
+  .entry .note{font-family:var(--mono);font-size:.64rem;color:var(--teal);margin-top:7px}
+  .addslot{padding:18px 0;border-top:1px dashed var(--line);font-family:var(--mono);font-size:.68rem;color:var(--cream-dimmer)}
+
+  /* NIYYAH */
+  .niyyah{position:relative;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--gold);padding:36px;overflow:hidden}
+  .niyyah .tag{font-family:var(--mono);font-size:.64rem;letter-spacing:.13em;text-transform:uppercase;color:var(--saffron);margin-bottom:16px}
+  .niyyah .nm{font-family:var(--disp);font-weight:500;font-size:2rem;margin-bottom:14px}
+  .niyyah .nm .ar{color:var(--gold);font-size:.62em;font-style:italic;margin-left:10px}
+  .niyyah p{color:var(--cream-dim);max-width:62ch;margin-bottom:12px}
+  .niyyah .notify a{font-family:var(--mono);font-size:.74rem;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px}
+
+  /* WRITING band (cream invert) */
+  .writing{background:var(--cream);color:var(--night)}
+  .writing .wrap{display:flex;justify-content:space-between;align-items:center;gap:22px;flex-wrap:wrap;padding:50px 30px}
+  .writing .k{font-family:var(--mono);font-size:.64rem;letter-spacing:.13em;text-transform:uppercase;color:var(--saffron)}
+  .writing h3{font-family:var(--disp);font-weight:500;font-size:clamp(1.8rem,4vw,2.6rem);margin-top:6px;letter-spacing:-.015em}
+  .writing p{color:#5a4a36;font-size:.98rem;margin-top:6px;max-width:42ch}
+  .writing a.go{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--night);text-decoration:none;background:var(--gold);padding:14px 22px;white-space:nowrap;transition:transform .2s}
+  .writing a.go:hover{transform:translateY(-2px)}
+
+  /* REST OF ME */
+  .rest-grid{display:grid;grid-template-columns:1fr 300px;gap:46px;align-items:start}
+  @media (max-width:760px){.rest-grid{grid-template-columns:1fr;gap:36px}}
+  .rest .lead{font-family:var(--disp);font-style:italic;font-size:1.5rem;color:var(--gold);line-height:1.35;margin-bottom:20px}
+  .rest p{color:var(--cream-dim);margin-bottom:16px;max-width:56ch}
+  .rest .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .rest .tags span{font-family:var(--mono);font-size:.66rem;letter-spacing:.04em;color:var(--cream-dim);border:1px solid var(--line);padding:7px 12px}
+  .vinyl-wrap{display:flex;flex-direction:column;align-items:center;gap:18px}
+  .turntable{width:200px;height:200px;position:relative}
+  .record{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 50% 50%,#1a1a17 0 18%,#0a0a08 18.5% 33%,#161412 33.5% 35%,#0a0a08 35.5% 50%,#161412 50.5% 52%,#0a0a08 52.5% 68%,#161412 68.5% 70%,#0a0a08 70.5% 100%);border:1px solid rgba(243,232,210,.12);animation:spin 6s linear infinite;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+  .record .lbl{position:absolute;inset:34%;border-radius:50%;background:var(--saffron);display:flex;align-items:center;justify-content:center;text-align:center}
+  .record .lbl span{font-family:var(--mono);font-size:.5rem;letter-spacing:.06em;color:#2a0f06;line-height:1.3;padding:6px}
+  .record::after{content:"";position:absolute;inset:48.6%;border-radius:50%;background:var(--night);border:1px solid rgba(0,0,0,.5)}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.record{animation:none}}
+  .vinyl-cap{font-family:var(--mono);font-size:.64rem;color:var(--cream-dimmer);text-align:center;letter-spacing:.06em}
+  .photo figure{margin:18px 0 0;transform:rotate(-2deg)}
+  .photo img{width:100%;height:auto;display:block;border:8px solid var(--cream);box-shadow:0 14px 34px rgba(0,0,0,.45)}
+  .photo figcaption{font-family:var(--mono);font-size:.62rem;color:var(--cream-dimmer);margin-top:14px;line-height:1.5;text-align:center}
+
+  /* CONTACT (saffron block) */
+  .contact{background:var(--saffron);color:#2a0f06}
+  .contact .wrap{padding:90px 30px}
+  .contact .k{font-family:var(--mono);font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:#3a1508}
+  .contact h2{font-family:var(--disp);font-weight:500;font-size:clamp(2.4rem,8vw,4.6rem);line-height:.95;letter-spacing:-.02em;margin:14px 0 30px}
+  .contact-links{display:flex;flex-wrap:wrap;gap:12px 34px}
+  .contact-links a{font-family:var(--mono);font-size:.85rem;color:#2a0f06;text-decoration:none;border-bottom:1.5px solid #2a0f06;padding-bottom:4px;transition:opacity .2s}
+  .contact-links a:hover,.contact-links a:focus-visible{opacity:.6}
+  .contact-links .v{opacity:.7}
+
+  footer{background:var(--night)}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:26px 30px}
+  footer span{font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;color:var(--cream-dimmer)}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+  ::selection{background:var(--gold);color:var(--night)}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<header class="mast" id="mast">
+  <div class="id"><div class="nm" id="nm"></div><div class="ar" id="ar"></div></div>
+  <nav class="ix" id="ix"></nav>
+</header>
+
+<section class="hero">
+  <svg id="net" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1000 620" aria-hidden="true"><g id="netg"></g></svg>
+  <div class="veil"></div>
+  <div class="wrap inner">
+    <span class="mono eyebrow anim" id="eyebrow" style="animation-delay:.1s"></span>
+    <h1 class="anim" id="title" style="animation-delay:.25s"></h1>
+    <p class="sub anim" id="sub" style="animation-delay:.45s"></p>
+    <p class="mono credits anim" id="credits" style="animation-delay:.6s"></p>
+  </div>
+  <div class="cue">scroll</div>
+</section>
+
+<div class="now"><div class="wrap"><b>Now</b><span id="now"></span></div></div>
+
+<main>
+  <div class="wrap">
+    <section class="reel" id="memos"><div class="reel-head"><span class="rn">Reel 01</span><h2>Memos</h2><span class="h-note">notes in progress</span></div><p class="reel-intro" id="memos-intro"></p><div id="memos-list"></div></section>
+    <section class="reel" id="fellowships"><div class="reel-head"><span class="rn">Reel 02</span><h2>Fellowships</h2></div><div id="fellowships-list"></div></section>
+    <section class="reel" id="projects"><div class="reel-head"><span class="rn">Reel 03</span><h2>Projects</h2></div><div id="projects-list"></div></section>
+    <section class="reel" id="experience"><div class="reel-head"><span class="rn">Reel 04</span><h2>Experience</h2></div><div id="experience-list"></div></section>
+    <section class="reel" id="investing"><div class="reel-head"><span class="rn">Reel 05</span><h2>Venture &amp; investing</h2></div><div id="investing-list"></div></section>
+    <section class="reel" id="niyyah"><div class="reel-head"><span class="rn">Reel 06</span><h2>The company</h2></div>
+      <div class="niyyah reveal"><div class="tag" id="ni-tag"></div><div class="nm" id="ni-nm"></div><div id="ni-body"></div><div class="notify" id="ni-notify"></div></div>
+    </section>
+  </div>
+
+  <section id="writing"><div class="writing"><div class="wrap reveal"><div><div class="k">Writing</div><h3 id="wr-title"></h3><p id="wr-sub"></p></div><a class="go" id="wr-link" target="_blank" rel="noopener">Read →</a></div></div></section>
+
+  <div class="wrap">
+    <section class="reel" id="rest"><div class="reel-head"><span class="rn">Reel 07</span><h2>The rest of me</h2></div>
+      <div class="rest-grid">
+        <div class="rest reveal" id="rest-text"></div>
+        <div class="reveal">
+          <div class="vinyl-wrap">
+            <div class="turntable"><div class="record"><div class="lbl"><span id="vinyl-lbl"></span></div></div></div>
+            <div class="vinyl-cap" id="vinyl-cap"></div>
+          </div>
+          <div class="photo"><figure><img src="notes.jpg" alt="Handwritten sticky notes brainstorming identity words: builder, visionary, weaver, guide." /><figcaption id="photo-cap"></figcaption></figure></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="contact" id="contact"><div class="wrap reveal"><div class="k">Contact</div><h2 id="ct-head"></h2><div class="contact-links" id="ct-links"></div></div></section>
+</main>
+
+<footer><div class="wrap"><span id="ft-name"></span><span id="ft-tag"></span></div></footer>
+
+<script>
+/* =============================================================
+   EDIT EVERYTHING HERE — one object drives the whole page.
+   Add an entry: copy a { } block inside a list and edit it.
+   <em>word</em> in the title/lead = gold emphasis.
+   [brackets] = a placeholder for you to fill in.
+   ============================================================= */
+const CONTENT = {
+  name: "Tawheeda",
+  arabic: "توحيدة",                 // verify this spelling before publishing
+  footerTag: "Dhaka ⇄ everywhere",
+  index: [
+    { n:"01", label:"Memos", href:"#memos" },
+    { n:"02", label:"Work", href:"#fellowships" },
+    { n:"03", label:"Niyyah", href:"#niyyah" },
+    { n:"04", label:"Writing", href:"#writing" },
+    { n:"05", label:"Contact", href:"#contact" }
+  ],
+
+  eyebrow: "Rooted in Dhaka · Bangladesh — a young country: fertile soil, early minds",
+  title: 'I care where capital gets allocated — and <em>what it compounds into.</em>',
+  sub: "Right now that means AI: enormous capital is flowing in, and very little of it asks whether the future it builds compounds for people or quietly routes around them. I think that gap is the most underpriced question in the market.",
+  credits: "Founder · Investor-in-training · Fintech & AI",
+
+  now: "<em>Venture allocation intern</em> (Summer 2026) · building <em>Niyyah</em> · on repeat: <em>'Great Expectations'</em> (The Outsiders) · reading [a book]",
+
+  memosIntro: "Short takes — markets, capital, the future of AI, and whatever I'm turning over.",
+  memos: [
+    { title:"The next decade's biggest industry isn't AI — it's the power to run it", meta:"AI · energy · infrastructure", body:"Compute and energy have become the real bottleneck under the AI boom — hyperscaler capex now rivals global oil-and-gas investment. A map of who owns the chips, the power, and the grid beneath the hype, and where capital is quietly concentrating.", href:"" },
+    { title:"What the AI buildout keeps mispricing", meta:"Thesis", body:"Enormous capital is flowing into AI, and very little of it asks whether the future it builds compounds for people or routes around them. The case that this gap is the market's most underpriced question.", href:"" }
+  ],
+
+  fellowships: [
+    { title:"Soar With Us Fellowship", meta:"Baker Institute × Girls Into VC · 2025–present",
+      body:"Founded Lehigh's Women in VC platform through Soar With Us — built it across departments, ran VC simulation workshops on thesis development, competitive analysis, and deal structuring, and grew a recurring investor network (Kelly O'Connell, Ariella Frank). Now embedded in the national Girls Into VC network." },
+    { title:"Entrepreneurs First — Investing Fellowship", meta:"Talent investing",
+      body:"EF is a global talent investor that backs exceptional people before they have a company, or even a cofounder. Through their investing fellowship I source entrepreneurial talent and connect them with the right investors." }
+  ],
+
+  projects: [
+    { title:"AI & venture deal allocation", meta:"Senior thesis · Cognitive Science (AI)",
+      body:"How AI shapes — and can quietly bias — who gets funded in venture. Where my cog-sci / AI training meets the allocation question I care about most." },
+    { title:"Women's Entrepreneurship Ambassador", meta:"Baker Institute",
+      body:"A collaboration with Lehigh's Baker Institute advancing women's entrepreneurship — programming, community, and access." }
+  ],
+
+  experience: [
+    { title:"Sway", meta:"AI automation & business development · 2025",
+      body:"Operating inside an early-stage startup — AI automation and business development." },
+    { title:"Sinbad Capital & 360 Ventures Collective", meta:"Venture allocation intern · Summer 2026",
+      body:"Venture allocation work across two firms — capital formation, deal evaluation, and the investor side of the table." }
+  ],
+
+  investing: [
+    { title:"Base10 Partners · Alif Network", meta:"10+ memos",
+      body:"Ten-plus investment memos co-authored with the Base10 team — live deal evaluation, not case studies." },
+    { title:"LehighSiliconValley", meta:"Live diligence",
+      body:"Hands-on due diligence on real companies." }
+  ],
+
+  niyyah: {
+    tag:"The company · in stealth",
+    name:"Niyyah", arabic:"نية",
+    body:[
+      "I'm building in a market I don't have to study, because I'm already in it: ethical fintech for the global Muslim consumer. It's early, and quiet on purpose.",
+      "What I'll say out loud: it's one of fintech's fastest-growing, least-served markets — and access is the whole game."
+    ],
+    notifyEmail:"syedatawheedahuq@gmail.com"
+  },
+
+  writing:{ title:"The Money Memo", sub:"Notes on markets, capital, and who it actually reaches.", href:"https://substack.com/@themoneymemobytawheedahuq" },
+
+  rest:{
+    lead:"Off the clock — and honestly, it's all the same clock.",
+    paras:[
+      "Theatre and Broadway, jazz on vinyl, books stacked past reason. I've taken theatre and lighting-design classes — I think a lot about how a room is lit and staged, on a screen or off it. The film side I came up on too: Bangladeshi intellects like Zahir Raihan and Tareque Masud, who taught me that paying close attention to ordinary people is itself a kind of politics.",
+      "Bangladesh is young, and fertile in more than soil: it grows creatives and early intellects faster than the world notices. My whole point is to send capital back into that ground — economic footing for every class."
+    ],
+    tags:["Theatre","Broadway","Lighting design","Jazz","Vinyl","Books","Cinema","Dhaka"],
+    vinylLabel:"NOW<br>SPINNING",
+    vinylCap:"'Great Expectations' — The Outsiders (Broadway)",
+    photoCaption:"figuring out what to call myself — builder, visionary, weaver, guide."
+  },
+
+  contact:{ head:"Let's make something.", links:[
+    { label:"Email", href:"mailto:syedatawheedahuq@gmail.com", v:"syedatawheedahuq@gmail.com" },
+    { label:"LinkedIn", href:"https://www.linkedin.com/in/syedatawheedahuq", v:"linkedin.com/in/syedatawheedahuq" },
+    { label:"Substack", href:"https://substack.com/@themoneymemobytawheedahuq", v:"The Money Memo" }
+  ]}
+};
+
+/* ===================== RENDER ===================== */
+(function(){
+  const $=id=>document.getElementById(id), set=(id,h)=>{const e=$(id);if(e)e.innerHTML=h;};
+  set('nm',CONTENT.name); set('ar',CONTENT.arabic);
+  set('ix',CONTENT.index.map(i=>`<a href="${i.href}"><b>${i.n}</b>${i.label}</a>`).join(''));
+  set('eyebrow',CONTENT.eyebrow); set('title',CONTENT.title); set('sub',CONTENT.sub); set('credits',CONTENT.credits);
+  set('now',CONTENT.now); set('memos-intro',CONTENT.memosIntro);
+
+  const list=items=>items.map(it=>{
+    if(it.add) return `<div class="addslot">${it.add}</div>`;
+    const h3=it.href?`<a href="${it.href}" target="_blank" rel="noopener">${it.title}</a>`:it.title;
+    return `<div class="entry"><div class="er"><h3>${h3}</h3><span class="meta">${it.meta||''}</span></div>${it.body?`<p>${it.body}</p>`:''}${it.note?`<span class="note">${it.note}</span>`:''}</div>`;
+  }).join('');
+  ['memos','fellowships','projects','experience','investing'].forEach(k=>set(k+'-list',list(CONTENT[k])));
+
+  const n=CONTENT.niyyah;
+  set('ni-tag',n.tag);
+  set('ni-nm',`${n.name}${n.arabic?` <span class="ar">${n.arabic}</span>`:''}`);
+  set('ni-body',n.body.map(p=>`<p>${p}</p>`).join(''));
+  set('ni-notify',`<a href="mailto:${n.notifyEmail}?subject=Notify%20me%20about%20Niyyah">Notify me →</a>`);
+
+  const w=CONTENT.writing; set('wr-title',w.title); set('wr-sub',w.sub); const wl=$('wr-link'); if(wl) wl.href=w.href;
+
+  const r=CONTENT.rest;
+  set('rest-text',`<p class="lead">${r.lead}</p>${r.paras.map(p=>`<p>${p}</p>`).join('')}<div class="tags">${r.tags.map(t=>`<span>${t}</span>`).join('')}</div>`);
+  set('vinyl-lbl',r.vinylLabel); set('vinyl-cap',r.vinylCap); set('photo-cap',r.photoCaption);
+
+  set('ct-head',CONTENT.contact.head);
+  set('ct-links',CONTENT.contact.links.map(l=>{const ext=/^https?:/.test(l.href)?' target="_blank" rel="noopener"':'';return `<a href="${l.href}"${ext}>${l.label} — <span class="v">${l.v}</span></a>`;}).join(''));
+  set('ft-name',`© ${new Date().getFullYear()} ${CONTENT.name} Huq`); set('ft-tag',CONTENT.footerTag);
+})();
+
+/* masthead scroll */
+(function(){const m=document.getElementById('mast');const o=()=>m.classList.toggle('scrolled',scrollY>40);o();addEventListener('scroll',o,{passive:true});})();
+
+/* river / neural delta — procedural, draws in, nodes breathe */
+(function(){
+  const g=document.getElementById('netg'); if(!g) return;
+  const red=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  const paths=[], nodes=[];
+  const cols=["var(--gold)","var(--teal)","var(--gold-2)"];
+  function branch(x,y,ang,len,depth,w,col){
+    if(depth<=0||len<10) return;
+    const x2=x+Math.cos(ang)*len, y2=y+Math.sin(ang)*len;
+    const off=len*0.16*(Math.random()-0.5)*2;
+    const mx=(x+x2)/2+Math.cos(ang+Math.PI/2)*off, my=(y+y2)/2+Math.sin(ang+Math.PI/2)*off;
+    paths.push({d:`M${x.toFixed(1)} ${y.toFixed(1)} Q${mx.toFixed(1)} ${my.toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)}`,w:w,col:col,op:(0.5*depth/7+0.18)});
+    nodes.push({x:x2,y:y2,r:w*0.85+0.5,col:col});
+    const kids=depth>3?(Math.random()<0.55?3:2):2;
+    for(let i=0;i<kids;i++){
+      const spread=(i-(kids-1)/2)*(0.42+Math.random()*0.3);
+      branch(x2,y2,ang+spread,len*(0.72+Math.random()*0.1),depth-1,w*0.8,col);
+    }
+  }
+  const seeds=[[20,520,-0.62],[40,600,-0.9],[10,400,-0.4],[90,608,-1.15],[30,300,-0.28]];
+  seeds.forEach((s,i)=>branch(s[0],s[1],s[2],170,7,2.3,cols[i%cols.length]));
+
+  let html="";
+  paths.forEach((p,i)=>{ html+=`<path d="${p.d}" fill="none" stroke="${p.col}" stroke-width="${p.w.toFixed(2)}" stroke-opacity="${p.op.toFixed(2)}" stroke-linecap="round" data-i="${i}"/>`; });
+  nodes.forEach((nd,i)=>{ html+=`<circle cx="${nd.x.toFixed(1)}" cy="${nd.y.toFixed(1)}" r="${nd.r.toFixed(2)}" fill="${nd.col}" fill-opacity="0" data-n="${i}"/>`; });
+  g.innerHTML=html;
+
+  if(red){
+    g.querySelectorAll('path').forEach(p=>p.setAttribute('stroke-opacity',p.getAttribute('stroke-opacity')));
+    g.querySelectorAll('circle').forEach(c=>c.setAttribute('fill-opacity','0.5'));
+    return;
+  }
+  const NS='http://www.w3.org/2000/svg';
+  g.querySelectorAll('path').forEach((p,i)=>{
+    const L=p.getTotalLength?p.getTotalLength():200;
+    p.style.strokeDasharray=L; p.style.strokeDashoffset=L;
+    p.animate([{strokeDashoffset:L},{strokeDashoffset:0}],{duration:1400,delay:60+i*7,easing:'ease-out',fill:'forwards'});
+    if(L<58) return;
+    const pulse=document.createElementNS(NS,'path');
+    pulse.setAttribute('d',p.getAttribute('d'));
+    pulse.setAttribute('fill','none');
+    pulse.setAttribute('stroke','var(--gold-2)');
+    pulse.setAttribute('stroke-width',(parseFloat(p.getAttribute('stroke-width'))+0.7).toFixed(2));
+    pulse.setAttribute('stroke-linecap','round');
+    const dot=11+Math.random()*9;
+    pulse.style.strokeDasharray=`${dot.toFixed(1)} ${(L*2).toFixed(1)}`;
+    pulse.style.strokeOpacity='0';
+    g.appendChild(pulse);
+    pulse.animate([
+      {strokeDashoffset:0,strokeOpacity:0},
+      {strokeOpacity:0.9,offset:0.12},
+      {strokeOpacity:0.9,offset:0.82},
+      {strokeDashoffset:-L,strokeOpacity:0}
+    ],{duration:2400+Math.random()*2800,delay:1500+i*28+Math.random()*1400,iterations:Infinity,easing:'linear'});
+  });
+  g.querySelectorAll('circle').forEach((c,i)=>{
+    c.animate([{fillOpacity:0},{fillOpacity:0.6},{fillOpacity:0.28}],{duration:2600,delay:900+i*9,easing:'ease-in-out',fill:'forwards'});
+    setTimeout(()=>{c.animate([{fillOpacity:0.28},{fillOpacity:0.6},{fillOpacity:0.28}],{duration:3200+Math.random()*2000,iterations:Infinity,easing:'ease-in-out'});},1400+i*9);
+  });
+})();
+
+/* scroll reveals */
+(function(){
+  const red=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  const els=document.querySelectorAll('.reveal');
+  if(red||!('IntersectionObserver'in window)){els.forEach(e=>e.classList.add('in'));return;}
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+  els.forEach(e=>io.observe(e));
+})();
+</script>
+</body>
+</html>
